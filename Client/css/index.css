@@ -1,0 +1,42 @@
+body{
+    background:url('./Featured-Image-Live-Weather-Wallpapers-Android.jpg');
+}
+
+.page{
+    align-items: center;
+    position: relative;
+    font-size: large;
+    padding-bottom: 69px;
+    padding-top: 30px;
+}
+#textbox_container{
+    width: 600px; 
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 30px;  
+    padding-top: 50px;
+    border-radius: 15px ;  
+    align-items: center;
+}
+h4{
+    font-size: 35px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: azure;
+}
+
+table{
+    border: 0px;
+    width: 600px; 
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 30px;  
+    padding-top: 50px;
+    border-radius: 15px ;  
+    align-items: center;
+}
+th{
+    color: aliceblue;
+}
+#city{
+    padding:5px
+}
