@@ -17,7 +17,6 @@ export function postWeather(req, res){
     console.log(data);
 
     weatherSearch(function(result){
-        console.log(result);
         res.send({
             result: result,
             message: 1
@@ -59,7 +58,6 @@ function weatherSearch(callback, data){
 
         for(var i=0; i< data.cities.length; i++){
                 if(typeof data.cities[i] != 'undefined' && data.cities[i] != ''){
-                try{
                         const URL = `https://api.openweathermap.org/data/2.5/weather?q=${data.cities[i]}&appid=${APIkey}`
                         axios.get(URL)
                         .then(res=>{
@@ -74,14 +72,12 @@ function weatherSearch(callback, data){
                             jsonArray.weather.push(obj);
                         })
                         .catch(e=>{
-                            if(e.data.cod == 404)
-                            console.log(e.data.message);
+                            if(e.response.data.cod == '404'){
+                                var result = `{"message":"-1"}`;
+                                var obj = JSON.parse(result);
+                                jsonArray.weather.push(obj);
+                            }
                         })
-                }
-                catch(e){
-                    if(e.data.cod == 404)
-                    console.log(e.data.message);
-                }
             }
             else break;
         }

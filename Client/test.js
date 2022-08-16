@@ -27,6 +27,7 @@ function submitCities(){
             var data = res.data.result.weather;
 
             for(var i=0; i<data.length; i++){
+                if(typeof data[i].message == 'undefined'){
                 console.log(data[i].city_name+" "+data[i].temp+" "+data[i].feels_like);
                 string += `<tr>
                 <th>${i+1}</th>
@@ -34,6 +35,10 @@ function submitCities(){
                 <th>${data[i].temp}</th>
                 <th>${data[i].feels_like}</th>
                 </tr>"`
+                }
+                else{
+                    alert("One of the city name is Invalid");
+                }
             }
             document.getElementById('table_body').innerHTML = blank;
             document.getElementById('table_body').innerHTML = string;
